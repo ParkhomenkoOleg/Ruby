@@ -2,9 +2,9 @@
 
 <%= render @library %>
 
-<div>
-  <%= link_to "Edit this library", edit_library_path(@library) %> |
-  <%= link_to "Back to libraries", libraries_path %>
-
+<div class="btn-group" role="group" aria-label="Library actions">
+  <%= link_to "Edit this library", edit_library_path(@library), class: "btn btn-primary" %>
+  <%= link_to "Back to libraries", libraries_path, class: "btn btn-secondary" %>
   <%= button_to "Destroy this library", @library, method: :delete %>
+
 </div>

@@ -30,11 +30,12 @@ end
 
 
 person = FakePerson.new
-100.times do |i|
+1.times do |i|
   name = person.first_name
   surname = person.middle_name
   lastname = person.last_name
   date_of_birth = Faker::Date.between(from: '2010-09-23', to: '2011-09-25')
   card_reader_id = rand(1..100)
-  ActiveRecord::Base.connection.execute("INSERT INTO users (name, surname, lastname, date_of_birth, card_reader_id, created_at, updated_at) VALUES ('#{name}', '#{surname}', '#{lastname}', '#{date_of_birth}', '#{card_reader_id}', date('now'), date('now'))")
+  email = "testemail@gmai.com"
+  ActiveRecord::Base.connection.execute("INSERT INTO users (name, surname, lastname, date_of_birth, card_reader_id, created_at, updated_at, email) VALUES ('#{name}', '#{surname}', '#{lastname}', '#{date_of_birth}', '#{card_reader_id}', date('now'), date('now'), '#{email}')")
 end
